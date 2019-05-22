@@ -1,0 +1,55 @@
+<%include ../partials/header%>
+
+<h1>Create a Player Character</h1>
+
+<form action="/createpc" method = "GET" id = "create-pc-form">
+    <div class="form-group">
+        <label for="name">Player Name: </label>
+        <input type="text" name = 'playername' id='nameinput'>
+    </div>
+    <div class="form-group">
+        <label for="name">Character Name: </label>
+        <input type="text" name = 'charactername' id='nameinput'>
+    </div>
+    <div class="form-group">
+            <label for="race">Character Race: </label>
+            <select name="race" id="">
+                <option value="dwarf">Dwarf</option>
+                <option value="elf">Elf</option>
+                <option value="halfling">Halfling</option>
+                <option value="human">Human</option>
+                <option value="dragonborn">Dragonborn</option>
+                <option value="gnome">Gnome</option>
+                <option value="half-elf">Half-Elf</option>
+                <option value="half-orc">Half-Orc</option>
+                <option value="tiefling">Tiefling</option>
+            </select>
+        </div>
+    <div class="form-group">
+        <label for="str">STR</label>
+        <input type="number" name="str" max="30" class = 'stat-block'>
+        <label for="dex">DEX</label>
+        <input type="number" name="dex" max="30" class = 'stat-block'>
+        <label for="con">CON</label>
+        <input type="number" name="con" max="30" class = 'stat-block'>
+        <label for="int">INT</label>
+        <input type="number" name="int" max="30" class = 'stat-block'>
+        <label for="wis">WIS</label>
+        <input type="number" name="wis" max="30" class = 'stat-block'>
+        <label for="cha">CHA</label>
+        <input type="number" name="cha" max="30" class = 'stat-block'>
+    </div>
+    <div class = 'form-group'>
+        <label for="image">Image Link</label>
+        <input type="text" name="image">
+    </div>
+    <div class="form-group">
+        <label for="bio">Character Biography</label>
+        <textarea name="bio" id="" cols="100" rows="10"></textarea>
+    </div>
+
+<button class = 'btn btn-outline-dark' type = 'submit'>Create Character</button>
+
+</form>
+
+<%include ../partials/footer%>
