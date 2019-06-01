@@ -52,3 +52,16 @@ textarea {
     display: block;
 }
 
+.playertile {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ff4949;
+}
+
+.stat-table {
+    width: 50%;
+}
+
+.stat-table th {
+    font-weight: 700;
+}

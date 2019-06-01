@@ -1,18 +1,15 @@
 let mongoose = require("mongoose");
 
-let statsSchema = new mongoose.Schema({
+let pcSchema = new mongoose.Schema({
+    playername: String,
+    charactername: String,
+    race: String,
     strength: Number,
     dexterity: Number,
     constitution: Number,
     intelligence: Number,
     wisdom: Number,
-    charisma: Number
-})
-
-let pcSchema = new mongoose.Schema({
-    name: String,
-    race: String,
-    stats: statsSchema,
+    charisma: Number,
     items: {},
     bio: String,
     image: String

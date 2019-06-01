@@ -1,0 +1,36 @@
+<%include ../partials/header%>
+
+<%pcs.forEach(function(pc){%>
+<div class = 'container playertile'>
+    <h5>Character Details</h5>
+    <ul>
+        <li>Player Name: <%=pc.playername%></li>
+        <li>Character name: <%=pc.charactername%></li>
+        <li>Race: <%=pc.race%></li>
+    </ul>
+    <h5>Character Stats</h5>
+    <table class = 'table stat-table'>
+    <tr>
+        <th>STR</th>
+        <th>DEX</th>
+        <th>CON</th>
+        <th>INT</th>
+        <th>WIS</th>
+        <th>CHA</th>
+    </tr>
+    <tr>
+        <td><%=pc.strength%></td>
+        <td><%=pc.dexterity%></td>
+        <td><%=pc.constitution%></td>
+        <td><%=pc.intelligence%></td>
+        <td><%=pc.wisdom%></td>
+        <td><%=pc.charisma%></td>
+    </tr>
+    </table>
+    <form action = '/pcs/<%=pc._id%>?_method=DELETE' method = 'POST'>
+    <button type = 'submit' class = 'btn btn-danger'>Delete</button>
+    </form>
+</div>
+<%})%>
+
+<%include ../partials/footer%>
