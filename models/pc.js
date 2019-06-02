@@ -10,7 +10,7 @@ let pcSchema = new mongoose.Schema({
     intelligence: Number,
     wisdom: Number,
     charisma: Number,
-    items: {},
+    items: [{type: mongoose.Schema.Types.ObjectId, ref: "item"}],
     bio: String,
     image: String
 });

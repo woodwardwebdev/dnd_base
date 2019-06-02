@@ -1,0 +1,164 @@
+<%include ../partials/header%>
+
+
+<h1>Item Create Page</h1>
+
+<form action="/items" method = 'POST' class = "create-form">
+    <div class="form-group">
+        <label for="name">Item Name: </label>
+        <input type="text" name = 'name'>
+    </div>
+    <div class="form-group">
+        <label for="type">Item Type: </label>
+        <select name = 'type' id = 'itemtype-select'>
+            <option value="Armor">Armor</option>
+            <option value="Potion">Potion</option>
+            <option value="Ring">Ring</option>
+            <option value="Rod">Rod</option>
+            <option value="Scroll">Scroll</option>
+            <option value="Staff">Staff</option>
+            <option value="Wand">Wand</option>
+            <option value="Weapon(melee)">Weapon(melee)</option>
+            <option value="Weapon(ranged)">Weapon(ranged)</option>
+            <option value="Wondrous Item">Wondrous Item</option>
+        </select>
+        <div class="form-group" id='armortype-select-div'>
+            <label for="armortype-select">Armor Type: </label>
+            <select name="armortype" id="armortype-select">
+                <option value="Light">Light</option>
+                <option value="Medium">Medium</option>
+                <option value="Heavy">Heavy</option>
+                <option value="Plate">Plate</option>
+            </select>
+        </div>
+        <div class="form-group hidden" id='weapontype-melee-select-div'>
+            <label for="weapontype-melee-select">Weapon Type: </label>
+            <select name="weapontypemelee" id="weapontype-melee-select">
+                <option value="Club">Club</option>
+                <option value="Dagger">Dagger</option>
+                <option value="Greatclub">Greatclub</option>
+                <option value="Handaxe">Handaxe</option>
+                <option value="Javelin">Javelin</option>
+                <option value="Light Hammer">Light Hammer</option>
+                <option value="Mace">Mace</option>
+                <option value="Quarterstaff">Quarterstaff</option>
+                <option value="Sickle">Sickle</option>
+                <option value="Spear">Spear</option>
+                <option value="Battleaxe">Battleaxe</option>
+                <option value="Flail">Flail</option>
+                <option value="Glaive">Glaive</option>
+                <option value="Greataxe">Greataxe</option>
+                <option value="Greatsword">Greatsword</option>
+                <option value="Halberd">Halberd</option>
+                <option value="Lance">Lance</option>
+                <option value="Longsword">Longsword</option>
+                <option value="Maul">Maul</option>
+                <option value="Morningstar">Morningstar</option>
+                <option value="Pike">Pike</option>
+                <option value="Rapier">Rapier</option>
+                <option value="Scimitar">Scimitar</option>
+                <option value="Shortsword">Shortsword</option>
+                <option value="Trident">Trident</option>
+                <option value="War Pick">War Pick</option>
+                <option value="Warhammer">Warhammer</option>
+                <option value="Whip">Whip</option>
+            </select>
+        </div>
+        <div class="form-group hidden" id='weapontype-ranged-select-div'>
+                <label for="weapontype-ranged-select">Weapon Type: </label>
+                <select name="weapontyperanged" id="weapontype-ranged-select">
+                    <option value="Crossbow, light">Crossbow, light</option>
+                    <option value="Dart">Dart</option>
+                    <option value="Shortbow">Shortbow</option>
+                    <option value="Sling">Sling</option>
+                    <option value="Blowgun">Blowgun</option>
+                    <option value="Crossbow, hand">Crossbow, hand</option>
+                    <option value="Crossbow, heavy">Crossbow, heavy</option>
+                    <option value="Longbow">Longbow</option>
+                    <option value="Net">Net</option>
+                </select>
+            </div>
+        
+    </div>
+    <div class="form-group">
+        <label for="rarity">Item Rarity: </label>
+        <select name = 'rarity'>
+            <option value="Common">Common</option>
+            <option value="Uncommon">Uncommon</option>
+            <option value="Rare">Rare</option>
+            <option value="Very Rare">Very Rare</option>
+            <option value="Legendary">Legendary</option>
+        </select>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="attunement" id="attune">
+        <label class="form-check-label" for="attune">Requires Attunement? </label>
+    </div>
+    <div id="weapon-traits-div" class = 'hidden'>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Ammunition" id="check1">
+            <label class="form-check-label" for="check1">Ammunition</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Finesse" id="check2">
+            <label class="form-check-label" for="check2">Finesse</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Heavy" id="check3">
+            <label class="form-check-label" for="check3">Heavy</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Light" id="check4">
+            <label class="form-check-label" for="check4">Light</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Loading" id="check5">
+            <label class="form-check-label" for="check5">Loading</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Range" id="check6">
+            <label class="form-check-label" for="check6">Range</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Reach" id="check7">
+            <label class="form-check-label" for="check7">Reach</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Thrown" id="check8">
+            <label class="form-check-label" for="check8">Thrown</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Two Handed" id="check9">
+            <label class="form-check-label" for="check9">Two Handed</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Versatile" id="check10">
+            <label class="form-check-label" for="check10">Versatile</label>
+        </div>
+    </div>    
+    <div class="form-group">
+        <label for="description">Item Description: </label>
+        <textarea name="description" id="" cols="50" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="currentOwner">Current Owner:</label>
+        <select name="currentOwner">
+            <option value="none">None</option>
+                <% Pcs.forEach(function(pc){ %>
+                    <option value="<%=pc._id%>"><%=pc.charactername%></option>
+               <% }) %>
+        </select>
+    </div>
+    
+</form>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/scripts/main.js"></script>
+<script src="/scripts/items.js"></script>
+
+
+</body>
+</html>

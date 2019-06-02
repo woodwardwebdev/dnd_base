@@ -30,12 +30,12 @@ h1 {
     margin: 10px auto;
 }
 
-#create-pc-form {
+.create-form {
     margin: 20px auto;
     width: 50%;
 }
 
-#create-pc-form label {
+.create-form label {
     display: inline-block;
 }
 
@@ -54,7 +54,7 @@ textarea {
 
 .playertile {
     padding: 10px;
-    margin: 10px;
+    margin: 10px auto;
     border: 1px solid #ff4949;
 }
 
@@ -64,4 +64,8 @@ textarea {
 
 .stat-table th {
     font-weight: 700;
+}
+
+.hidden {
+    display: none;
 }
