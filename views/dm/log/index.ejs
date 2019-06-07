@@ -1,0 +1,26 @@
+<%include ../../partials/header%>
+
+<div class="container">
+    <div class="row button-options justify-content-around">
+        <a href="/dm/log/new"><button class = 'btn btn-outline-success'>Create New Log</button> </a>
+    </div>
+    
+
+    <% logs.forEach(function(log){ %>
+        <div class="container paperblock">
+            <a href="/dm/log/<%=log._id%>"><h5 class = 'display-4'><%=log.title%></h5></a>
+            <p class = 'lead'>Date: <%=log.date.toDateString()%></p>
+            <p><%if(log.content.length<100){%>
+                <%=log.content%>
+            <%} else {%>
+            <%=log.content.slice(0,100)%>
+            ...
+            <%}%>
+            </p>
+        </div>
+    <% }) %>
+</div>
+
+
+
+<%include ../../partials/footer%>

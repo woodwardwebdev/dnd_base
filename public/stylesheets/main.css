@@ -10,7 +10,7 @@ body {
     background-color: #dedede;
 }
 
-h1, .navbar {
+h1, h5, .navbar {
     font-family: 'Cinzel Decorative', cursive;
 }
 
@@ -18,6 +18,24 @@ h1 {
     text-shadow: 1px 1px 5px rgb(129, 129, 129);
     text-align: center;
     margin: 10px auto;
+}
+
+a {
+    color: black;
+}
+
+a:hover{
+    color: #ff4949;
+}
+
+a:visited{
+    color: rgb(66, 66, 66);
+}
+
+input{
+    border-radius: 5px;
+    width: 50%;
+    display: block;
 }
 
 .jumbotron {
@@ -69,3 +87,44 @@ textarea {
 .hidden {
     display: none;
 }
+
+.button-options {
+    margin: 10px;
+    padding: 10px;
+}
+
+.dm-log-main a{
+    color: black;
+}
+
+.paperblock{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 235, 210, 0.808);
+}
+
+.card {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+input[type=text]{
+    width: 100%;
+    letter-spacing: 1.2;
+}
+
+textarea {
+    width: 100%;
+}
+
+/* .paperblock button, .paperblock form {
+    display: inline;
+    margin-right: 5px
+} */
+
+.clor{
+    background-color: gray
+}
+

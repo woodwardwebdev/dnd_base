@@ -6,6 +6,8 @@ let itemSchema = new mongoose.Schema({
     armortype: String,
     weapontype: String,
     rarity: String,
+    traits: [],
+    description: String,
     attunement: Boolean,
     currentOwner: [{type: mongoose.Schema.Types.ObjectId, ref: "currentOwner"}]
 })

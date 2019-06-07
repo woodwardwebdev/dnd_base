@@ -95,44 +95,45 @@
         <label class="form-check-label" for="attune">Requires Attunement? </label>
     </div>
     <div id="weapon-traits-div" class = 'hidden'>
+    <label for="">Weapon Traits: </label>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Ammunition" id="check1">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Ammunition" id="check1">
             <label class="form-check-label" for="check1">Ammunition</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Finesse" id="check2">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Finesse" id="check2">
             <label class="form-check-label" for="check2">Finesse</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Heavy" id="check3">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Heavy" id="check3">
             <label class="form-check-label" for="check3">Heavy</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Light" id="check4">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Light" id="check4">
             <label class="form-check-label" for="check4">Light</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Loading" id="check5">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Loading" id="check5">
             <label class="form-check-label" for="check5">Loading</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Range" id="check6">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Range" id="check6">
             <label class="form-check-label" for="check6">Range</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Reach" id="check7">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Reach" id="check7">
             <label class="form-check-label" for="check7">Reach</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Thrown" id="check8">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Thrown" id="check8">
             <label class="form-check-label" for="check8">Thrown</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Two Handed" id="check9">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Two Handed" id="check9">
             <label class="form-check-label" for="check9">Two Handed</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Versatile" id="check10">
+            <input class="form-check-input" type="checkbox" name = 'traits' value="Versatile" id="check10">
             <label class="form-check-label" for="check10">Versatile</label>
         </div>
     </div>    
@@ -141,15 +142,15 @@
         <textarea name="description" id="" cols="50" rows="6"></textarea>
     </div>
     <div class="form-group">
-        <label for="currentOwner">Current Owner:</label>
+        <label for="currentOwner">Current Owner: </label>
         <select name="currentOwner">
-            <option value="none">None</option>
+            <option value="party">None</option>
                 <% Pcs.forEach(function(pc){ %>
                     <option value="<%=pc._id%>"><%=pc.charactername%></option>
                <% }) %>
         </select>
     </div>
-    
+    <button class = 'btn btn-outline-success' type="submit">Create Item</button>
 </form>
 
 

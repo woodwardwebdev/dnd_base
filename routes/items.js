@@ -1,12 +1,22 @@
+// Index, New, Create, Show, Edit, Update, Destroy
+
 const express = require("express");
 const router = express.Router();
 const Pc = require("../models/pc");
 const Item = require("../models/item");
-
+// Index Route
 router.get('/', function(req, res){
-    res.render('items/index')
+    Item.find({}, function(err, founditems){
+        if(err){
+            console.log(err);
+            res.redirect('back');
+        }
+        else{
+            res.render('items/index', {items: founditems});
+        }
+    }) 
 })
-
+// New Route
 router.get('/new', function(req, res){
     Pc.find({}, function(err, foundPcs){
         if(err){
@@ -15,6 +25,103 @@ router.get('/new', function(req, res){
         }
         else{
             res.render('items/new', {Pcs: foundPcs});
+        }
+    })
+})
+// Create Route
+router.post('/', function(req, res){
+    let attunement;
+    if(req.body.attunement == 'on'){
+        attunement = true;
+    } else {
+        attunement = false;
+    }
+    let owner;
+    if(req.body.currentOwner !== 'party'){
+        owner = req.body.currentOwner;
+    } else {
+        owner = null;
+    }
+    Item.create({
+    name: req.body.name,
+    type: req.body.type,
+    armortype: req.body.armortype,
+    weapontype: req.body.weapontype,
+    rarity: req.body.rarity,
+    attunement: attunement,
+    traits: req.body.traits,
+    description: req.body.description,
+    currentOwner: owner
+    }, function(err, createditem){
+        if(err){
+            console.log(err);
+            res.redirect('back');
+        }
+        else{
+            createditem.save();
+            console.log("CREATED ITEM OWNER:"+createditem.currentOwner);
+            if(createditem.currentOwner){
+                console.log('THIS HAS FAILED')
+                Pc.findById(createditem.currentOwner, function(err, foundpc){
+                    if(err){
+                        console.log(err);
+                        releaseEvents.redirect('back');
+                    } else {
+                    foundpc.items.push(createditem);
+                    foundpc.save();
+                    console.log(foundpc);
+                    Item.find({}, function(err, founditems){
+                        if(err){
+                            console.log(err);
+                            res.redirect('back');
+                        }
+                        else{
+                            req.flash("success", "Item: "+createditem.name+" Created!");
+                            res.redirect('/items');
+                        }
+                    })
+                    }
+                })
+            } else {
+                Item.find({}, function(err, founditems){
+                    if(err){
+                        console.log(err);
+                        res.redirect('back');
+                    }
+                    else{
+                        req.flash("success", "Item: "+createditem.name+" Created!");
+                        res.redirect('/items');
+                    }
+                })
+            }
+           
+        }
+    })
+})
+// Show Route
+router.get('/:id', function(req, res){
+    Item.findById(req.params.id, function(err, founditem){
+        if(err){
+            console.log(err);
+            res.redirect('back');
+        } else {
+            res.render('items/show', {item: founditem});
+        }
+    })
+})
+// Edit Route
+
+// Update Route
+
+// Destroy Route
+router.delete('/:id', function(req, res){
+    Item.findByIdAndDelete(req.params.id, function(err, deleteditem){
+        if(err){
+            console.log(err);
+            res.redirect('back');
+        } else {
+            req.flash("success", "Item: "+deleteditem.name+" deleted");
+            res.redirect('/items');
         }
     })
 })

@@ -1,0 +1,18 @@
+<%include ../../partials/header%>
+
+<div class="row justify-content-center">
+    <div class="col-9">
+        <div class="container paperblock">
+            <h5 class = 'display-4'><%=log.title%></h5>
+            <p class = 'lead'>Date: <%=log.date.toDateString()%></p>
+            <p><%=log.content%></p>
+            <form action="/dm/log/<%=log._id%>?_method=DELETE" method='POST'>
+                <button type='submit' class = 'btn btn-sm btn-outline-danger'>Delete log</button>
+            </form>
+            <a href="/dm/log/<%=log._id%>/edit"><button class = 'btn btn-sm btn-outline-warning'>Update log</button></a> 
+        </div>
+    </div>
+</div>
+ 
+
+<%include ../../partials/footer%>

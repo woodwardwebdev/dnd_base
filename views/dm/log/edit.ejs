@@ -1,0 +1,22 @@
+<%include ../../partials/header%>
+
+<div class="container log-create-form paperblock">
+    <form action="/dm/log/<%=log._id%>?_method=PUT" method = "POST">
+       <div class="form-group">
+           <label for="title">Title: </label>
+           <input type="text" name="title" value='<%=log.title%>' required>
+       </div>
+       <div class="form-group">
+            <label for="date">Date: </label>
+            <input type="date" name = 'date' value = <%=log.date.toISOString().slice(0, 10)%>>
+        </div> 
+       <div class="form-group">
+            <label for="content">Log Content: </label>
+            <textarea name="content" cols="70" rows="10"><%=log.content%></textarea>
+        </div>
+        <button type='submit' class='btn btn-success'>Update Log</button>
+    </form>
+</div>
+
+
+<%include ../../partials/footer%>

@@ -1,0 +1,21 @@
+<%include ../../partials/header%>
+
+<div class="container log-create-form">
+    <form action="/dm/log/" method = "POST">
+       <div class="form-group">
+           <label for="title">Title: </label>
+           <input type="text" name="title" class = 'form-text-input' required>
+       </div>
+       <div class="form-group">
+            <label for="date">Date: </label>
+            <input type="date" name = 'date' value = <%=new Date().toISOString().slice(0, 10)%>>
+        </div> 
+       <div class="form-group">
+            <label for="content">Log Content: </label>
+            <textarea name="content" cols="70" rows="10"></textarea>
+        </div>
+        <button type='submit' class='btn btn-success'>Create Log</button>
+    </form>
+</div>
+
+<%include ../../partials/footer%>

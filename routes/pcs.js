@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Pc = require("../models/pc");
+const Item = require("../models/item");
 
 // PC's Section Routes
 
@@ -20,6 +21,18 @@ router.get('/index', function(req, res){
         }
         else {
             res.render('pcs/index', {pcs: foundpcs});
+        }
+    })
+})
+
+router.get('/:id', function(req, res){
+    Pc.findById(req.params.id).populate('items').exec(function(err, foundpc){
+        if(err){
+            console.log(err);
+            res.redirect('back');
+        }
+        else{
+            res.render('pcs/show', {pc: foundpc});
         }
     })
 })
