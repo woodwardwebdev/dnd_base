@@ -110,6 +110,21 @@ textarea {
     border-radius: 10px;
 }
 
+input, textarea {
+    border: 1px solid black;
+    padding : 0 10px;
+    margin  : 0;
+    width   : 240px;
+  
+    background: none;
+}
+
+input:focus, textarea:focus {
+    background   : rgb(255, 255, 255);
+    border-radius: 5px;
+    outline      : none;
+  }
+
 input[type=text]{
     width: 100%;
     letter-spacing: 1.2;
@@ -117,6 +132,19 @@ input[type=text]{
 
 textarea {
     width: 100%;
+}
+
+#floater {
+    margin-left: -33%;
+}
+
+.margin-form{
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.212);
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.486);
 }
 
 /* .paperblock button, .paperblock form {

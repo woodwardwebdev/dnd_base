@@ -5,15 +5,11 @@ const Item = require("../models/item");
 
 // PC's Section Routes
 
-router.get('/', function(req, res){
-    res.render('pcs');
-})
-
 router.get('/new', function(req, res){
     res.render('pcs/new');
 })
 
-router.get('/index', function(req, res){
+router.get('/', function(req, res){
     Pc.find({}, function(err, foundpcs){
         if(err){
             console.log(err);
